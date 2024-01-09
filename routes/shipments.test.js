@@ -1,10 +1,10 @@
 "use strict";
 
-const request = require("supertest");
-const app = require("../app");
-
 const shipItApi = require("../shipItApi");
 shipItApi.shipProduct = jest.fn();
+
+const request = require("supertest");
+const app = require("../app");
 
 describe("POST /", function () {
   test("valid", async function () {

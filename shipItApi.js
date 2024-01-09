@@ -30,4 +30,4 @@ async function shipProduct({ productId, name, addr, zip }) {
   return shipData.receipt.shipId;
 }
 
-module.exports = { shipProduct, SHIPIT_SHIP_URL };
+module.exports = { shipProduct, SHIPIT_SHIP_URL, SHIPIT_API_KEY };

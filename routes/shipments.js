@@ -22,6 +22,7 @@ router.post("/", async function (req, res, next) {
     req.body, orderSchema, {required: true});
   if (!result.valid) {
     const errs = result.errors.map(err => err.stack);
+    console.log("errors: ", errs);
     throw new BadRequestError(errs);
   }
   const { productId, name, addr, zip } = req.body;

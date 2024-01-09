@@ -29,7 +29,7 @@ describe("POST /", function () {
       .send({
         productId: 1000,
         name: "Test McTest"
-      });
+      }); //could add more things that go wrong in different ways to this test
 
     expect(resp.status).toEqual(400);
     expect(resp.body.error.message).toEqual(

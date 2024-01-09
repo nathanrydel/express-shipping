@@ -32,9 +32,8 @@ describe("POST /", function () {
       });
 
     expect(resp.status).toEqual(400);
-    expect(resp.body.error.message).toEqual(`[
-      'instance requires property "addr"',
-      'instance requires property "zip"'
-    ]`);
+    expect(resp.body.error.message).toEqual(
+      ["instance requires property \"addr\"",
+       "instance requires property \"zip\""]);
   });
 });

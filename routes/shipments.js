@@ -18,8 +18,11 @@ const orderSchema = require("../schemas/order.json");
  */
 
 router.post("/", async function (req, res, next) {
-  if (req.body === undefined) {
-    throw new BadRequestError();
+  const result = jsonschema.validate(
+    req.body, orderSchema, {required: true});
+  if (!result.valid) {
+    const errs = result.errors.map(err => err.stack);
+    throw new BadRequestError(errs);
   }
   const { productId, name, addr, zip } = req.body;
   const shipId = await shipProduct({ productId, name, addr, zip });

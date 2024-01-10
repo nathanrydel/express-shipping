@@ -1,10 +1,13 @@
 "use strict";
 
 const express = require("express");
-const { BadRequestError } = require("../expressError");
 const router = new express.Router();
 
+const jsonschema = require("jsonschema");
+const { BadRequestError } = require("../expressError");
+
 const { shipProduct } = require("../shipItApi");
+const orderSchema = require("../schemas/order.json");
 
 /** POST /ship
  *

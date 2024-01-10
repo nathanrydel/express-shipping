@@ -26,7 +26,7 @@ test("shipProduct", async function () {
     zip: "12345-6789",
   });
 
-  expect(shipId).toEqual(expect.any(Number));
+  expect(shipId).toEqual(expect.any(42));
 });
 
 afterAll(function () {

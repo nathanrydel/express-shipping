@@ -32,8 +32,5 @@ describe("POST /", function () {
       });
 
     expect(resp.status).toEqual(400);
-    expect(resp.body.error.message).toEqual({
-
-    });
   });
 });

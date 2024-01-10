@@ -9,7 +9,7 @@ const { BadRequestError } = require("../expressError");
 const { shipProduct } = require("../shipItApi");
 const orderSchema = require("../schemas/order.json");
 
-/** POST /ship
+/** POST /shipments
  *
  * VShips an order coming from json body:
  *   { productId, name, addr, zip }

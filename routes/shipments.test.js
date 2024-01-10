@@ -22,4 +22,18 @@ describe("POST /", function () {
       .send();
     expect(resp.statusCode).toEqual(400);
   });
+
+  test("invalid request - missing addr and zip", async function () {
+    const resp = await request(app)
+      .post("/shipments")
+      .send({
+        productId: 1000,
+        name: "Test McTest"
+      });
+
+    expect(resp.status).toEqual(400);
+    expect(resp.body.error.message).toEqual({
+
+    });
+  });
 });
